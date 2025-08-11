@@ -272,14 +272,17 @@ public class ARTemplateMenuManager : MonoBehaviour
             m_DebugMenu.gameObject.SetActive(false);
             m_InitializingDebugMenu = false;
         }
+        
+        if (m_ShowObjectMenu && aRInteractorSpawnTrigger.isSpawned)
+        {
+            HideMenu();
+            aRInteractorSpawnTrigger.isSpawned = false;
+        }
 
         if (m_ShowObjectMenu || m_ShowOptionsModal)
         {
             if (!m_IsPointerOverUI && (m_TapStartPositionInput.TryReadValue(out _) || m_DragCurrentPositionInput.TryReadValue(out _)))
             {
-                // if (m_ShowObjectMenu)
-                //     HideMenu();
-
                 if (m_ShowOptionsModal)
                     m_ModalMenu.SetActive(false);
             }

@@ -58,6 +58,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets
         }
 
         public bool canSpawnObject = false;
+        public bool isSpawned = false;
 
         [SerializeField]
         [Tooltip("Whether to require that the AR Interactor hits an AR Plane with a horizontal up alignment in order to spawn anything.")]
@@ -184,6 +185,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets
 
                     m_ObjectSpawner.TrySpawnObject(arRaycastHit.pose.position, arPlane.normal);
                     //canSpawnObject = false; 
+                    isSpawned = true;
                 }
 
                 return;
