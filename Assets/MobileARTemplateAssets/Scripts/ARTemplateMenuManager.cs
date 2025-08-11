@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -5,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.AR.Inputs;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Readers;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets;
@@ -211,6 +213,8 @@ public class ARTemplateMenuManager : MonoBehaviour
         get => m_DragCurrentPositionInput;
         set => XRInputReaderUtility.SetInputProperty(ref m_DragCurrentPositionInput, value, this);
     }
+    
+    public ARInteractorSpawnTrigger aRInteractorSpawnTrigger;
 
     bool m_IsPointerOverUI;
     bool m_ShowObjectMenu;
@@ -273,8 +277,8 @@ public class ARTemplateMenuManager : MonoBehaviour
         {
             if (!m_IsPointerOverUI && (m_TapStartPositionInput.TryReadValue(out _) || m_DragCurrentPositionInput.TryReadValue(out _)))
             {
-                if (m_ShowObjectMenu)
-                    HideMenu();
+                // if (m_ShowObjectMenu)
+                //     HideMenu();
 
                 if (m_ShowOptionsModal)
                     m_ModalMenu.SetActive(false);
@@ -327,7 +331,10 @@ public class ARTemplateMenuManager : MonoBehaviour
             }
         }
 
-        HideMenu();
+        aRInteractorSpawnTrigger.canSpawnObject = false;
+        StartCoroutine(SetCanSpawnObject());
+
+        //HideMenu();
     }
 
     void ShowMenu()
@@ -339,6 +346,13 @@ public class ARTemplateMenuManager : MonoBehaviour
             m_ObjectMenuAnimator.SetBool("Show", true);
         }
         AdjustARDebugMenuPosition();
+        StartCoroutine(SetCanSpawnObject());
+    }
+    
+    IEnumerator SetCanSpawnObject()
+    {
+        yield return new WaitForSeconds(0.1f);
+        aRInteractorSpawnTrigger.canSpawnObject = true;
     }
 
     /// <summary>
@@ -411,6 +425,7 @@ public class ARTemplateMenuManager : MonoBehaviour
     {
         m_ObjectMenuAnimator.SetBool("Show", false);
         m_ShowObjectMenu = false;
+        aRInteractorSpawnTrigger.canSpawnObject = false;
         AdjustARDebugMenuPosition();
     }
 

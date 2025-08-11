@@ -1,5 +1,6 @@
 #if AR_FOUNDATION_PRESENT
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Readers;
@@ -55,6 +56,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets
             get => m_ObjectSpawner;
             set => m_ObjectSpawner = value;
         }
+
+        public bool canSpawnObject = false;
 
         [SerializeField]
         [Tooltip("Whether to require that the AR Interactor hits an AR Plane with a horizontal up alignment in order to spawn anything.")]
@@ -164,9 +167,14 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets
                 if (m_ARInteractor.hasSelection)
                     return;
 
+                if (!canSpawnObject)
+                {
+                    return;
+                }
+
                 // Don't spawn the object if the tap was over screen space UI.
                 var isPointerOverUI = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(-1);
-                if (!isPointerOverUI && m_ARInteractor.TryGetCurrentARRaycastHit(out var arRaycastHit))
+                if ((!isPointerOverUI || canSpawnObject) && m_ARInteractor.TryGetCurrentARRaycastHit(out var arRaycastHit))
                 {
                     if (!(arRaycastHit.trackable is ARPlane arPlane))
                         return;
@@ -175,6 +183,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets
                         return;
 
                     m_ObjectSpawner.TrySpawnObject(arRaycastHit.pose.position, arPlane.normal);
+                    //canSpawnObject = false; 
                 }
 
                 return;

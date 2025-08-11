@@ -49,7 +49,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets
                 m_ObjectSpawner = FindObjectOfType<ObjectSpawner>();
 #endif
         }
-
+        
         /// <summary>
         /// See <see cref="MonoBehaviour"/>.
         /// </summary>
