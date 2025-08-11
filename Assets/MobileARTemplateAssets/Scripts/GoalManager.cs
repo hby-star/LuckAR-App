@@ -70,7 +70,12 @@ public class GoalManager : MonoBehaviour
         /// <summary>
         /// Show rotate hints
         /// </summary>
-        Rotate
+        Rotate,
+        
+        /// <summary>
+        /// Show delete hints
+        /// </summary>
+        Delete
     }
 
     /// <summary>
@@ -187,7 +192,7 @@ public class GoalManager : MonoBehaviour
 
     void Update()
     {
-        if (Pointer.current != null && Pointer.current.press.wasPressedThisFrame && !m_AllGoalsFinished && (m_CurrentGoal.CurrentGoal == OnboardingGoals.FindSurfaces || m_CurrentGoal.CurrentGoal == OnboardingGoals.Move || m_CurrentGoal.CurrentGoal == OnboardingGoals.Scale || m_CurrentGoal.CurrentGoal == OnboardingGoals.Rotate))
+        if (Pointer.current != null && Pointer.current.press.wasPressedThisFrame && !m_AllGoalsFinished && (m_CurrentGoal.CurrentGoal == OnboardingGoals.FindSurfaces || m_CurrentGoal.CurrentGoal == OnboardingGoals.Move || m_CurrentGoal.CurrentGoal == OnboardingGoals.Scale || m_CurrentGoal.CurrentGoal == OnboardingGoals.Rotate || m_CurrentGoal.CurrentGoal == OnboardingGoals.Delete))
         {
             if (m_CurrentCoroutine != null)
             {
@@ -233,6 +238,10 @@ public class GoalManager : MonoBehaviour
         else if (m_CurrentGoal.CurrentGoal == OnboardingGoals.Scale)
         {
             m_CurrentCoroutine = StartCoroutine(WaitUntilNextCard(8f));
+        }
+        else if (m_CurrentGoal.CurrentGoal == OnboardingGoals.Rotate)
+        {
+            m_CurrentCoroutine = StartCoroutine(WaitUntilNextCard(10f));
         }
         else if (m_CurrentGoal.CurrentGoal == OnboardingGoals.TapSurface)
         {
@@ -299,11 +308,13 @@ public class GoalManager : MonoBehaviour
         var translateHintsGoal = new Goal(OnboardingGoals.Move);
         var scaleHintsGoal = new Goal(OnboardingGoals.Scale);
         var rotateHintsGoal = new Goal(OnboardingGoals.Rotate);
+        var deleteHintsGoal = new Goal(OnboardingGoals.Delete);
 
         m_OnboardingGoals.Enqueue(tapSurfaceGoal);
         m_OnboardingGoals.Enqueue(translateHintsGoal);
         m_OnboardingGoals.Enqueue(scaleHintsGoal);
         m_OnboardingGoals.Enqueue(rotateHintsGoal);
+        m_OnboardingGoals.Enqueue(deleteHintsGoal);
 
         m_CurrentGoal = m_OnboardingGoals.Dequeue();
         m_AllGoalsFinished = false;
