@@ -1848,7 +1848,7 @@ MonoBehaviour:
   m_SpawnOptionIndex: 0
   m_OnlySpawnInView: 1
   m_ViewportPeriphery: 0
-  m_ApplyRandomAngleAtSpawn: 1
+  m_ApplyRandomAngleAtSpawn: 0
   m_SpawnAngleRange: 0
   m_SpawnAsChildren: 1
 --- !u!4 &436358034

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -233,6 +234,7 @@ public class ARTemplateMenuManager : MonoBehaviour
         m_CancelButton.onClick.AddListener(HideMenu);
         m_DeleteButton.onClick.AddListener(DeleteFocusedObject);
         m_PlaneManager.planesChanged += OnPlaneChanged;
+        aRInteractorSpawnTrigger.objectSpawner.objectSpawned += OnObjectSpawn;
     }
 
     /// <summary>
@@ -245,6 +247,7 @@ public class ARTemplateMenuManager : MonoBehaviour
         m_CancelButton.onClick.RemoveListener(HideMenu);
         m_DeleteButton.onClick.RemoveListener(DeleteFocusedObject);
         m_PlaneManager.planesChanged -= OnPlaneChanged;
+        aRInteractorSpawnTrigger.objectSpawner.objectSpawned -= OnObjectSpawn;
     }
 
     /// <summary>
@@ -271,12 +274,6 @@ public class ARTemplateMenuManager : MonoBehaviour
         {
             m_DebugMenu.gameObject.SetActive(false);
             m_InitializingDebugMenu = false;
-        }
-        
-        if (m_ShowObjectMenu && aRInteractorSpawnTrigger.isSpawned)
-        {
-            HideMenu();
-            aRInteractorSpawnTrigger.isSpawned = false;
         }
 
         if (m_ShowObjectMenu || m_ShowOptionsModal)
@@ -338,6 +335,12 @@ public class ARTemplateMenuManager : MonoBehaviour
         StartCoroutine(SetCanSpawnObject());
 
         //HideMenu();
+    }
+
+    private void OnObjectSpawn(GameObject gameObject)
+    {
+        HideMenu();
+        aRInteractorSpawnTrigger.isSpawned = false;
     }
 
     void ShowMenu()
