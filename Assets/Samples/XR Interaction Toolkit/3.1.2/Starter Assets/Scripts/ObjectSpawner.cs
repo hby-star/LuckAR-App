@@ -210,7 +210,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
             var objectIndex = isSpawnOptionRandomized ? Random.Range(0, m_ObjectPrefabs.Count) : m_SpawnOptionIndex;
             var newObject = Instantiate(m_ObjectPrefabs[objectIndex]);
-            newObject.GetComponentInChildren<MeshRenderer>().materials[0].color = spawnColor;
+            newObject.GetComponentInChildren<MeshRenderer>().materials[0].SetColor("_BaseColor", spawnColor);
             
             if (m_SpawnAsChildren)
                 newObject.transform.parent = transform;
