@@ -276,6 +276,20 @@ public class ARTemplateMenuManager : MonoBehaviour
             m_InitializingDebugMenu = false;
         }
 
+        if (m_ShowObjectMenu)
+        {
+            if (m_DragCurrentPositionInput.TryReadValue(out _) || m_IsPointerOverUI)
+                aRInteractorSpawnTrigger.canSpawnObject = false;
+            else if (!m_IsPointerOverUI)
+            {
+                StartCoroutine(SetCanSpawnObject());
+            }
+        }
+        else
+        {
+            aRInteractorSpawnTrigger.canSpawnObject = false;
+        }
+
         if (m_ShowObjectMenu || m_ShowOptionsModal)
         {
             if (!m_IsPointerOverUI && (m_TapStartPositionInput.TryReadValue(out _) || m_DragCurrentPositionInput.TryReadValue(out _)))
@@ -334,7 +348,8 @@ public class ARTemplateMenuManager : MonoBehaviour
         aRInteractorSpawnTrigger.canSpawnObject = false;
         StartCoroutine(SetCanSpawnObject());
 
-        //HideMenu();
+        aRInteractorSpawnTrigger.canSpawnObject = false;
+        StartCoroutine(SetCanSpawnObject());
     }
 
     private void OnObjectSpawn(GameObject gameObject)

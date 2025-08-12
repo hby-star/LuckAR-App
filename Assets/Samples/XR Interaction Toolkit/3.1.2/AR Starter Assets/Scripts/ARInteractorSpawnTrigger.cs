@@ -162,7 +162,6 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets
             if (m_AttemptSpawn)
             {
                 m_AttemptSpawn = false;
-                Debug.Log("Attempting to spawn object at AR Interactor hit position.");
 
                 if (!canSpawnObject)
                 {
