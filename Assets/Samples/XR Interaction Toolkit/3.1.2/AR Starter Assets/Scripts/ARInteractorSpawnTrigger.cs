@@ -162,11 +162,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets
             if (m_AttemptSpawn)
             {
                 m_AttemptSpawn = false;
-
-                // Cancel the spawn if the select was delayed until the frame after the spawn trigger.
-                // This can happen if the select action uses a different input source than the spawn trigger.
-                if (m_ARInteractor.hasSelection)
-                    return;
+                Debug.Log("Attempting to spawn object at AR Interactor hit position.");
 
                 if (!canSpawnObject)
                 {
@@ -175,17 +171,32 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets
 
                 // Don't spawn the object if the tap was over screen space UI.
                 var isPointerOverUI = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(-1);
-                if ((!isPointerOverUI || canSpawnObject) && m_ARInteractor.TryGetCurrentARRaycastHit(out var arRaycastHit))
+                if (!isPointerOverUI || canSpawnObject)
                 {
-                    if (!(arRaycastHit.trackable is ARPlane arPlane))
-                        return;
+                    // 1. 先检测桌子
+                    if (m_ARInteractor.TryGetCurrent3DRaycastHit(out var rayHit))
+                    {
+                        if (rayHit.collider.CompareTag("Table")) // "Table" 标签
+                        {
+                            m_ObjectSpawner.TrySpawnObject(rayHit.point, rayHit.normal);
+                            isSpawned = true;
+                            return;
+                        }
+                    }
+                    
+                    // 2. 再检测 ARPlane
+                    if (m_ARInteractor.TryGetCurrentARRaycastHit(out var arRaycastHit))
+                    {
+                        if (arRaycastHit.trackable is ARPlane arPlane)
+                        {
+                            if (m_RequireHorizontalUpSurface && arPlane.alignment != PlaneAlignment.HorizontalUp)
+                                return;
 
-                    if (m_RequireHorizontalUpSurface && arPlane.alignment != PlaneAlignment.HorizontalUp)
-                        return;
-
-                    m_ObjectSpawner.TrySpawnObject(arRaycastHit.pose.position, arPlane.normal);
-                    //canSpawnObject = false; 
-                    isSpawned = true;
+                            m_ObjectSpawner.TrySpawnObject(arRaycastHit.pose.position, arPlane.normal);
+                            isSpawned = true;
+                            return;
+                        }
+                    }
                 }
 
                 return;

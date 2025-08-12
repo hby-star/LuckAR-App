@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4973536585280322973}
   m_Layer: 0
   m_Name: AttachTransform
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,10 +42,10 @@ GameObject:
   - component: {fileID: 8200211678787271842}
   - component: {fileID: 9138280815386112950}
   - component: {fileID: 4253486465369471561}
-  - component: {fileID: 8244513994867982004}
+  - component: {fileID: 3327728311928531428}
   m_Layer: 0
   m_Name: Visuals
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,8 +115,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8244513994867982004
-MeshCollider:
+--- !u!65 &3327728311928531428
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,10 +133,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3609677013819277373, guid: 19b909517c22b674fa1e86e40a55e247, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 2.0694456, y: 0.010014251, z: 0.9662367}
+  m_Center: {x: -0.000034421682, y: 0.9577621, z: 0.00018067658}
 --- !u!1 &3432067732512607540
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +148,7 @@ GameObject:
   - component: {fileID: 8248044347219301621}
   m_Layer: 0
   m_Name: Interaction Affordance
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +231,7 @@ GameObject:
   - component: {fileID: 2225817622109700560}
   m_Layer: 0
   m_Name: Color Affordance
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,7 +354,7 @@ GameObject:
   - component: {fileID: 762781518780533775}
   m_Layer: 0
   m_Name: TableVariant
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
