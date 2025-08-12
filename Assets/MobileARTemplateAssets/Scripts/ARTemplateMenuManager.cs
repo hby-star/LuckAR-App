@@ -347,6 +347,36 @@ public class ARTemplateMenuManager : MonoBehaviour
 
         aRInteractorSpawnTrigger.canSpawnObject = false;
         StartCoroutine(SetCanSpawnObject());
+    }
+    
+    private readonly List<Color> _spawnColors = new List<Color>
+    {
+        Color.white,
+        Color.black,
+        Color.red,
+        new (1,0.647f,0), // Orange
+        Color.yellow,
+        Color.green,
+        Color.cyan,
+        Color.blue,
+        new (0.5f,0f,0.5f) // purple
+    };
+    
+    private readonly float _spawnColorAlpha = 0.7843f;
+    
+    public void SetColorToSpawn(int colorIndex)
+    {
+        if (m_ObjectSpawner == null)
+        {
+            Debug.LogWarning("Object Spawner not configured correctly: no ObjectSpawner set.");
+        }
+        else
+        {
+            m_ObjectSpawner.spawnColor = colorIndex >= 0 && colorIndex < _spawnColors.Count
+                ? _spawnColors[colorIndex]
+                : Color.white; // Default to white if index is out of range
+            m_ObjectSpawner.spawnColor.a = _spawnColorAlpha;
+        }
 
         aRInteractorSpawnTrigger.canSpawnObject = false;
         StartCoroutine(SetCanSpawnObject());

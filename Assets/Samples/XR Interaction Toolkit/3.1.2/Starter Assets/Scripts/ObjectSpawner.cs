@@ -38,6 +38,10 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             get => m_ObjectPrefabs;
             set => m_ObjectPrefabs = value;
         }
+        
+        public Material spawnDebugMaterial;
+
+        public Color spawnColor = Color.white;
 
         [SerializeField]
         [Tooltip("Optional prefab to spawn for each spawned object. Use a prefab with the Destroy Self component to make " +
@@ -206,6 +210,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
             var objectIndex = isSpawnOptionRandomized ? Random.Range(0, m_ObjectPrefabs.Count) : m_SpawnOptionIndex;
             var newObject = Instantiate(m_ObjectPrefabs[objectIndex]);
+            newObject.GetComponentInChildren<MeshRenderer>().materials[0].color = spawnColor;
+            
             if (m_SpawnAsChildren)
                 newObject.transform.parent = transform;
 
