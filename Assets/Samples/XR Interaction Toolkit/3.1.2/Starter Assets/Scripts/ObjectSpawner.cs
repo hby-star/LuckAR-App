@@ -211,6 +211,10 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             var objectIndex = isSpawnOptionRandomized ? Random.Range(0, m_ObjectPrefabs.Count) : m_SpawnOptionIndex;
             var newObject = Instantiate(m_ObjectPrefabs[objectIndex]);
             newObject.GetComponentInChildren<MeshRenderer>().materials[0].SetColor("_BaseColor", spawnColor);
+            if (newObject.name.Contains("NotebookComputer"))
+            {
+                newObject.GetComponentInChildren<MeshRenderer>().materials[2].SetColor("_BaseColor", spawnColor);
+            }
             
             if (m_SpawnAsChildren)
                 newObject.transform.parent = transform;

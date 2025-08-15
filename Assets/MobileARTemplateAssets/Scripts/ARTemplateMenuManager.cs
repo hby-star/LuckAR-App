@@ -322,6 +322,8 @@ public class ARTemplateMenuManager : MonoBehaviour
         }
     }
 
+    public List<GameObject> objectSelectBox;
+
     /// <summary>
     /// Set the index of the object in the list on the ObjectSpawner to a specific value.
     /// This is effectively an override of the default behavior or randomly spawning an object.
@@ -329,6 +331,18 @@ public class ARTemplateMenuManager : MonoBehaviour
     /// <param name="objectIndex">The index in the array of the object to spawn with the ObjectSpawner</param>
     public void SetObjectToSpawn(int objectIndex)
     {
+        for (int i = 0; i < objectSelectBox.Count; i++)
+        {
+            if (i == objectIndex)
+            {
+                objectSelectBox[i].SetActive(true);
+            }
+            else
+            {
+                objectSelectBox[i].SetActive(false);
+            }
+        }
+        
         if (m_ObjectSpawner == null)
         {
             Debug.LogWarning("Object Spawner not configured correctly: no ObjectSpawner set.");
