@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 47369588478829997}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0027, z: 0.0167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -519,7 +519,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 49a6546c3319d3249919eb084dfd6ac1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6571791029587039651}
+      addedObject: {fileID: 602054599769161265}
   m_SourcePrefab: {fileID: 100100000, guid: 49a6546c3319d3249919eb084dfd6ac1, type: 3}
 --- !u!23 &463425725618824778 stripped
 MeshRenderer:
@@ -536,7 +536,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 49a6546c3319d3249919eb084dfd6ac1, type: 3}
   m_PrefabInstance: {fileID: 1274517166240774862}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &6571791029587039651
+--- !u!65 &602054599769161265
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
