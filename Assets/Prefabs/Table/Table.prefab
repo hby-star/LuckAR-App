@@ -62,8 +62,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -0.000017225}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.29535478}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3215250883916261751}
+  m_Children: []
   m_Father: {fileID: 1955350867968475061}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9138280815386112950
@@ -135,8 +134,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0694456, y: 0.010014251, z: 0.9662367}
-  m_Center: {x: -0.000034421682, y: 0.9577621, z: 0.00018067658}
+  m_Size: {x: 2.0694456, y: 0.079084784, z: 0.9662367}
+  m_Center: {x: -0.000034421682, y: 0.953396, z: 0.00018061721}
 --- !u!1 &2875516302191563396
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +147,7 @@ GameObject:
   - component: {fileID: 287612882565102739}
   - component: {fileID: 790317263842151349}
   - component: {fileID: 6253507954823395572}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +281,7 @@ GameObject:
   - component: {fileID: 6839488976813319405}
   - component: {fileID: 1417586097941711532}
   - component: {fileID: 1535545801902607245}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,9 +415,9 @@ GameObject:
   - component: {fileID: 4054484716414597678}
   - component: {fileID: 5618777458262626220}
   - component: {fileID: 4326536030047508797}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: qinglong
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.34658575, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -492,7 +491,7 @@ GameObject:
   - component: {fileID: 2059483449421835928}
   - component: {fileID: 7562833415161443938}
   - component: {fileID: 6630140219969599760}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,9 +707,9 @@ GameObject:
   - component: {fileID: 1663976213989155916}
   - component: {fileID: 7507295813528218651}
   - component: {fileID: 8579847615241556184}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: baihu
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -757,7 +756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.65782714, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -785,9 +784,9 @@ GameObject:
   - component: {fileID: 3937301031070212554}
   - component: {fileID: 617456887041108208}
   - component: {fileID: 7373839452641224856}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -799,20 +798,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5946275198978356534}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -0.584}
-  m_LocalScale: {x: 5, y: 5, z: 3.3857586}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8808307150943246344}
   - {fileID: 1418810212957394173}
   - {fileID: 4054484716414597678}
   - {fileID: 1663976213989155916}
-  m_Father: {fileID: 8200211678787271842}
+  m_Father: {fileID: 1955350867968475061}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.014, y: 1.376}
+  m_AnchoredPosition: {x: 0.00279993, y: 0.408}
   m_SizeDelta: {x: 0.417, y: 0.195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3937301031070212554
@@ -877,7 +876,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
 --- !u!1 &6671098055239080888
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,9 +888,9 @@ GameObject:
   - component: {fileID: 8808307150943246344}
   - component: {fileID: 896199826737046544}
   - component: {fileID: 1289349656582286210}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: zhuque
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -938,7 +937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -965,9 +964,9 @@ GameObject:
   - component: {fileID: 1418810212957394173}
   - component: {fileID: 8577154700888125567}
   - component: {fileID: 3217484626808473133}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: xuanwu
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1014,7 +1013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.832884, b: 0.10705934, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1162,7 +1161,7 @@ GameObject:
   - component: {fileID: 7957065152747748836}
   - component: {fileID: 4189582829608528937}
   - component: {fileID: 6695333295202981964}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1321,6 +1320,7 @@ Transform:
   - {fileID: 7814982524526534463}
   - {fileID: 4973536585280322973}
   - {fileID: 8200211678787271842}
+  - {fileID: 3215250883916261751}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3737547703307041619
