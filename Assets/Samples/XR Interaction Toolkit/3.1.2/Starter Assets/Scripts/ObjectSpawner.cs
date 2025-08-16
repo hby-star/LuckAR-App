@@ -213,7 +213,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             newObject.GetComponentInChildren<MeshRenderer>().materials[0].SetColor("_BaseColor", spawnColor);
             if (newObject.name.Contains("NotebookComputer"))
             {
-                newObject.GetComponentInChildren<MeshRenderer>().materials[2].SetColor("_BaseColor", spawnColor);
+                newObject.GetComponentInChildren<MeshRenderer>().materials[2].SetColor("_BaseColor", spawnColor * 0.5f);
             }
             
             if (m_SpawnAsChildren)
