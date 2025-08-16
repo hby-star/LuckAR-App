@@ -550,8 +550,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.48699892, y: 0.5188004, z: 0.4723224}
-  m_Center: {x: 0, y: -0.01590069, z: 0.2361612}
+  m_Size: {x: 0.48699895, y: 0.5188004, z: 0.41282964}
+  m_Center: {x: 0, y: -0.015900694, z: 0.26590762}
 --- !u!23 &3691069406949462923 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 05ca132553137bb4cbc5436bbbf33c33, type: 3}
