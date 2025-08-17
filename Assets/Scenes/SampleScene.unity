@@ -5571,7 +5571,7 @@ PrefabInstance:
     - target: {fileID: 2819776943908590173, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f8f61f184f7babc4d8eba73c82be3f8b, type: 3}
+      objectReference: {fileID: 21300000, guid: 0ed2dd11b38a47242ae864163df231ca, type: 3}
     - target: {fileID: 2941317804501384629, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
       propertyPath: m_Name
       value: Continue Button

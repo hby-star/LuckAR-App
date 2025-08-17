@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.AR.Inputs;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Readers;
@@ -398,6 +399,11 @@ public class ARTemplateMenuManager : MonoBehaviour
 
     private void OnObjectSpawn(GameObject gameObject)
     {
+        if (gameObject.name.Contains("Table"))
+        {
+            planeManager.requestedDetectionMode = PlaneDetectionMode.None;
+        }
+        
         HideMenu();
         aRInteractorSpawnTrigger.isSpawned = false;
     }
