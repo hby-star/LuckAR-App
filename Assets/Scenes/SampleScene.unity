@@ -574,7 +574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6570\u4F4D\u677F"
+  m_text: "\u624B\u673A"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e0ba3ca76ac922f4aa22609a9026d460, type: 2}
   m_sharedMaterial: {fileID: -5227317834234702136, guid: e0ba3ca76ac922f4aa22609a9026d460, type: 2}
@@ -5602,11 +5602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5779608150239002450, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
       propertyPath: m_text
-      value: "\u6B22\u8FCE\u4F7F\u7528AR\u684C\u9762\u9884\u89C8\u5C0F\u7A0B\u5E8F"
+      value: "\u6B22\u8FCE\u4F7F\u7528\u597D\u8FD0AR"
       objectReference: {fileID: 0}
     - target: {fileID: 5779608150239002450, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
       propertyPath: m_fontSize
-      value: 8.05
+      value: 12.05
       objectReference: {fileID: 0}
     - target: {fileID: 5779608150239002450, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
       propertyPath: m_fontAsset
@@ -16123,7 +16123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6536\u7EB3\u7BB1"
+  m_text: "\u97F3\u7BB1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e0ba3ca76ac922f4aa22609a9026d460, type: 2}
   m_sharedMaterial: {fileID: -5227317834234702136, guid: e0ba3ca76ac922f4aa22609a9026d460, type: 2}
