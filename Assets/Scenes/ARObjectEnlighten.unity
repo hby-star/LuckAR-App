@@ -534,8 +534,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackedImageManager: {fileID: 1164032466}
   imagePrefabs:
-  - imageName: TestARImage
-    prefab: {fileID: 8294798608524915905, guid: 66a96b4adacf0c74787998956ffe3c57, type: 3}
+  - imageName: ARImage_1
+    prefab: {fileID: 6988337500029966840, guid: c6d0122f7a206534ca0d38279aae6949, type: 3}
     matchImageSize: 1
 --- !u!1 &1240122027
 GameObject:
