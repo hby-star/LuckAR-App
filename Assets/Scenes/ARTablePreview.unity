@@ -5602,11 +5602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5779608150239002450, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
       propertyPath: m_text
-      value: "\u6B22\u8FCE\u4F7F\u7528\u597D\u8FD0AR"
+      value: "\u6B22\u8FCE\u4F7F\u7528\u597D\u8FD0AR\u684C\u9762\u9884\u89C8\u529F\u80FD"
       objectReference: {fileID: 0}
     - target: {fileID: 5779608150239002450, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
       propertyPath: m_fontSize
-      value: 12.05
+      value: 7.45
       objectReference: {fileID: 0}
     - target: {fileID: 5779608150239002450, guid: 063cc896506b947c7b2c2ae3beb5868f, type: 3}
       propertyPath: m_fontAsset
